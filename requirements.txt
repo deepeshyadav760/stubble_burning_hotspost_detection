@@ -1,0 +1,4 @@
+earthengine-api==0.1.393
+fastapi
+uvicorn
+pydantic
