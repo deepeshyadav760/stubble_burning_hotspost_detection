@@ -5,6 +5,7 @@ Methodology: "Clip and Conquer" for robust, research-standard analysis.
 """
 
 import ee
+import os
 import uvicorn
 import csv
 import io
@@ -623,6 +624,7 @@ async def export_csv_api():
 
 if __name__ == "__main__":
     print("=" * 60)
+    port = int(os.environ.get("PORT", 8080))
     print("TRIPLE-CHECK SENTINEL-2 BURN SCAR DETECTION (dNBR+BAI+dNDVI)")
     print("=" * 60)
-    uvicorn.run(app, host="localhost", port=8080)
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
